@@ -22,7 +22,7 @@
                 </button>
             </div>
             <p class="text-center text-sm text-green-800 mt-2">
-                Belum punya akun? <a href="#" class="font-semibold hover:underline">Daftar</a>
+                Belum punya akun? <a href="/register" class="font-semibold hover:underline">Daftar</a>
             </p>
         </form>
     </div>

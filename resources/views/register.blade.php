@@ -1,6 +1,6 @@
 @extends('layouts.auth')
 
-@section('title', 'Login | MyUMKM')
+@section('title', 'Register | MyUMKM')
 
 @section('content')
     <div class="flex items-center justify-center w-full h-screen">
