@@ -17,3 +17,15 @@ Route::get('/register', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 });
+
+Route::get('/notification', function () {
+    return view('notification');
+});
+
+Route::get('/transaction', function () {
+    return view('transaction');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
+});
