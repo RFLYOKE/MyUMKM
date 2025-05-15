@@ -5,3 +5,7 @@
 @section('header')
     @include('components.dashboardHeader')
 @endsection
+
+@section('content')
+    @include('components.corousel')    
+@endsection
