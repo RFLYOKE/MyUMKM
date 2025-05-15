@@ -26,7 +26,7 @@
         </div>
 
         <!-- Navbar bawah -->
-        <nav class="fixed bottom-0 left-0 right-0 bg-[#b4926a] h-20 flex justify-around items-center shadow-lg z-50 rounded-t-xl overflow-hidden">
+        <nav class="{{ request()->is('/') ? 'hidden' : '' }} fixed bottom-0 left-0 right-0 bg-[#b4926a] h-20 flex justify-around items-center shadow-lg z-50 rounded-t-xl overflow-hidden">
             <ul class="flex justify-between items-center w-full px-8 pb-2 relative z-10">
         
                 {{-- Home --}}
