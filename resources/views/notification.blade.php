@@ -1,9 +1,10 @@
 @extends('layouts.main')
 
-@section('title', 'Dashboard | MyUMKM')
+@section('title', 'Transaction | MyUMKM')
 
 @section('header')
-    @include('components.header.notificationHeader')
+    @section('page', 'Notifikasi')
+    @include('components.header.topHeader')
     <div class="p-6 flex flex-col gap-y-4 mb-20">
         @for ($i = 0; $i < 6; $i++)
             <div class="bg-[#E27D31] px-3 py-2 rounded-xl w-3/4 flex items-center gap-x-4">

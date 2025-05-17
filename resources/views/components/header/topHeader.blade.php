@@ -3,7 +3,7 @@
         <button>
             <img src="{{ asset('icon/arrowback.png') }}" alt="">
         </button>
-        <p class="text-white">Notifikasi</p>
+        <p class="text-white">@yield('page')</p>
     </div>
     <div>
         <img src="{{ asset('icon/setting.png') }}" alt="">
