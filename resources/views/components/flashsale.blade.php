@@ -1,12 +1,12 @@
 <div class="bg-[#A9CDA8] rounded-md px-4 py-2 mt-2">
     <!-- Header Flash Sale -->
-    <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center justify-between mb-2">
         <span class="text-lg font-bold">Flash Sale</span>
         <span id="countdown" class="bg-orange-400 text-white px-3 py-1 rounded font-bold">1:44:03</span>
     </div>
 
     <!-- Daftar Produk -->
-    <div class="grid grid-cols-4 gap-4">
+    <div class="grid grid-cols-4 gap-2">
         <div class="border rounded-md shadow p-2 bg-white">
             <img src="img/kaos.png" alt="Kaos" class="w-full h-14 object-contain mb-2" />
             <div class="text-sm font-bold">Rp169.000</div>

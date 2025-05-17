@@ -39,4 +39,5 @@
         </div>
     </div>
     @include('components.flashsale')
+    @include('components.products')
 @endsection
