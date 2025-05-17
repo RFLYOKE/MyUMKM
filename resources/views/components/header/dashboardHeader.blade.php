@@ -1,4 +1,4 @@
-<div class="bg-[#4A7744] px-4 py-6 flex flex-wrap items-center justify-between gap-2">
+<div class="bg-[#4A7744] p-4 flex flex-wrap items-center justify-between gap-2">
     <!-- Search Box -->
     <div class="flex items-center bg-white border border-[#5a3d2e] rounded-lg px-3 py-1">
         <!-- Search Icon -->

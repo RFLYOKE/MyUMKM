@@ -13,7 +13,7 @@
             <p class="w-3/4 text-2xl font-semibold"><span class="text-sm">Rp</span>100 <span class="text-sm">rb*</span></p>
         </div>
         <hr>
-        <p class="text-white font-semibold text-sm">Bebas Ongkir Rp <span class="text-2xl text-orange-500">0</span></p>
+        <p class="text-white font-semibold text-sm">Bebas Ongkir Rp. <span class="text-4xl font-bold text-orange-500">0</span></p>
     </div>
 </div>
 <div class="w-full flex items-center justify-center gap-x-2 py-2">
