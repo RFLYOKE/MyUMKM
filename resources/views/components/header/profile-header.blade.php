@@ -7,6 +7,6 @@
         </div>
     </div>
     <div>
-        <img src="{{ asset('icon/setting.png') }}" alt="">
+        <img src="{{ asset('icon/setting.png') }}" alt="" onclick="location.href='/profile/settings'">
     </div>
 </div>
