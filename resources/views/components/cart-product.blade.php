@@ -14,7 +14,7 @@
     </div>
   
     <!-- Tombol Buat Pesanan -->
-    <div class="flex justify-end mt-4">
+    <div class="flex justify-end">
       <button class="bg-[#ea8e49] hover:bg-[#d87c38] text-white text-sm px-4 py-1 rounded-md">
         Buat Pesanan
       </button>
