@@ -38,7 +38,7 @@ Route::get('/transaction', function () {
 });
 
 Route::get('/cart', function () {
-    return view('cart');
+    return view('cart.cart');
 });
 
 Route::get('/profile', function () {
