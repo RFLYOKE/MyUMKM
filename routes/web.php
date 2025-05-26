@@ -45,6 +45,21 @@ Route::get('/cart/detail-product', function () {
     return view('cart.detail-product');
 });
 
+Route::get('/cart/checkout', function () {
+    return view('cart.checkout');
+});
+Route::get('/cart/checkout/payment', function () {
+    return view('cart.payment.payment');
+});
+
+Route::get('/cart/checkout/confirm', function () {
+    return view('cart.payment.confirm-payment');
+});
+
+Route::get('/cart/checkout/success', function () {
+    return view('cart.payment.success');
+});
+
 Route::get('/profile', function () {
     return view('profile');
 });
