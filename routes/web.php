@@ -48,5 +48,8 @@ Route::get('/profile', function () {
 Route::get('/profile/settings', function () {
     return view('settings');
 });
+Route::get('/dashboard/search', function () {
+    return view('search-page');
+});
 
 require __DIR__.'/auth.php';

@@ -5,7 +5,7 @@
         <img src="/icon/searchIcon.png" alt="Search" class="w-5 h-5 mr-2" />
 
         <input type="text" placeholder="Baju Hitam Polos"
-            class="text-sm text-gray-700 placeholder-gray-400 focus:outline-none" />
+            class="text-sm text-gray-700 placeholder-gray-400 focus:outline-none" onclick="location.href='/dashboard/search'"/>
 
         <button class="text-sm font-semibold text-black ml-2">Cari</button>
     </div>
@@ -17,7 +17,7 @@
 
         <!-- Cart Icon -->
         <button class="ml-4">
-            <img src="/icon/cartIcon.png" alt="Cart" class="w-8 h-8" />
+            <img src="/icon/cartIcon.png" alt="Cart" class="w-8 h-8" onclick="location.href='/cart'"/>
         </button>
     </div>
 </div>
