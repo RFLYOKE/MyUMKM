@@ -7,37 +7,29 @@
 
     <!-- Daftar Produk -->
     <div class="grid grid-cols-4 gap-2">
-        <div class="border rounded-md shadow p-2 bg-white">
-            <img src="img/kaos.png" alt="Kaos" class="w-full h-14 object-contain mb-2" />
-            <div class="text-sm font-bold">Rp169.000</div>
-            <div class="text-xs line-through text-gray-500">Rp210.000</div>
-        </div>
+        @foreach ($produkFlashSale as $produk)
+            <div class="border rounded-md shadow p-2 bg-white">
+                {{-- Gambar Utama Produk --}}
+                @php
+                    $gambar = $produk->gambar_utama ?? 'img/default.png';
+                @endphp
+                <img src="{{ asset('storage/' . $gambar) }}" alt="{{ $produk->nama }}" class="w-full h-14 object-contain mb-2" />
 
-        <div class="border rounded-md shadow p-2 bg-white">
-            <img src="img/kaos.png" alt="Sate" class="w-full h-14 object-contain mb-2" />
-            <div class="text-sm font-bold">Rp10.000</div>
-            <div class="text-xs line-through text-gray-500">Rp15.000</div>
-        </div>
-
-        <div class="border rounded-md shadow p-2 bg-white">
-            <img src="img/kaos.png" alt="Jeans" class="w-full h-14 object-contain mb-2" />
-            <div class="text-sm font-bold">Rp100.000</div>
-            <div class="text-xs line-through text-gray-500">Rp255.000</div>
-        </div>
-
-        <div class="border rounded-md shadow p-2 bg-white">
-            <img src="img/kaos.png" alt="Kemeja" class="w-full h-14 object-contain mb-2" />
-            <div class="text-sm font-bold">Rp140.500</div>
-            <div class="text-xs line-through text-gray-500">Rp200.000</div>
-        </div>
+                {{-- Harga --}}
+                <div class="text-sm font-bold">Rp{{ number_format($produk->harga, 0, ',', '.') }}</div>
+                <div class="text-xs line-through text-gray-500">Rp{{ number_format($produk->harga * 1.3, 0, ',', '.') }}</div>
+            </div>
+        @endforeach
     </div>
 </div>
+
+{{-- Info Produk Tambahan --}}
 <div class="px-4 grid grid-cols-4 gap-4">
-    <div class="text-xs text-gray-600 mt-1">100+ Terjual</div>
-    <div class="text-xs text-gray-600 mt-1">📍Purwokerto</div>
-    <div class="text-xs text-gray-600 mt-1">100+ Terjual</div>
-    <div class="text-xs text-gray-600 mt-1">📍Purwokerto</div>
+    @foreach ($produkFlashSale as $produk)
+        <div class="text-xs text-gray-600 mt-1">{{ rand(100, 300) }}+ Terjual</div>
+    @endforeach
 </div>
+
 
 <script>
     // Total detik (1 jam 44 menit 3 detik = 6243 detik)

@@ -22,6 +22,11 @@ class User extends Authenticatable implements FilamentUser
     protected $fillable = [
         'name',
         'email',
+        'alamat_saya',
+        'no_hp',
+        'jenis_kelamin',
+        'tgl_lahir',
+        'profile_picture',
         'password',
         'role',
     ];
@@ -58,4 +63,35 @@ class User extends Authenticatable implements FilamentUser
         return true;
     }
 
+    // Relationships
+    public function keranjangs()
+    {
+        return $this->hasMany(Keranjang::class);
+    }
+
+    public function pesanans()
+    {
+        return $this->hasMany(Pesanan::class);
+    }
+
+    public function alamatPengirimans()
+    {
+        return $this->hasMany(AlamatPengiriman::class);
+    }
+
+    public function alamatDefault()
+    {
+        return $this->hasOne(AlamatPengiriman::class)->where('is_default', true);
+    }
+
+    // Scopes
+    public function scopeCustomers($query)
+    {
+        return $query->where('role', 'customer');
+    }
+
+    public function scopeAdmins($query)
+    {
+        return $query->where('role', 'admin');
+    }
 }
