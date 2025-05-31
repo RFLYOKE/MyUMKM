@@ -25,8 +25,8 @@
             <div class="flex items-center space-x-4 mb-6">
                 <img src="{{ asset('icon/profileIcon.png') }}" alt="" class="w-16 h-16">
                 <div>
-                    <p class="text-lg font-semibold">Rawalo</p>
-                    <p class="text-gray-500 text-sm">08 xxx xxx xxx</p>
+                    <p class="text-lg font-semibold">{{ auth()->user()->name}}</p>
+                    <p class="text-gray-500 text-sm">{{ auth()->user()->no_hp ?? '-' }}</p>
                 </div>
             </div>
 
@@ -44,10 +44,14 @@
                     <img src="{{ asset('icon/orderStatus.png') }}" alt="">
                     <span class="font-semibold">Status Pesanan</span>
                 </div>
-                <div class="flex items-center flex gap-x-3">
-                    <img src="{{ asset('icon/out.png') }}" alt="">
-                    <span class="font-semibold text-red-600">Keluar</span>
-                </div>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="flex items-center gap-x-3">
+                        <img src="{{ asset('icon/out.png') }}" alt="">
+                        <span class="font-semibold text-red-600">Keluar</span>
+                    </button>
+                </form>
+
             </div>
         </div>
     </div>

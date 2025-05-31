@@ -36,4 +36,5 @@ class PesananItem extends Model
     {
         return $this->belongsTo(Produk::class);
     }
+
 }

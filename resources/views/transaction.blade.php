@@ -16,8 +16,9 @@
         </div>
         <button class="text-lg font-semibold text-black ml-4">Cari</button>
     </div>
-    @for ($i = 0; $i < 4; $i++)
-        @include('components.transactionProducts')
-    @endfor
+    @foreach ($pesanans as $pesanan)
+        @include('components.transactionProducts', ['pesanan' => $pesanan])
+    @endforeach
+
 </div>
 @endsection

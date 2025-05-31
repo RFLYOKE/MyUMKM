@@ -76,12 +76,12 @@ class User extends Authenticatable implements FilamentUser
 
     public function alamatPengirimans()
     {
-        return $this->hasMany(AlamatPengiriman::class);
+        return $this->hasMany(AlamatPengirim::class);
     }
 
     public function alamatDefault()
     {
-        return $this->hasOne(AlamatPengiriman::class)->where('is_default', true);
+        return $this->hasOne(AlamatPengirim::class)->where('is_default', true);
     }
 
     // Scopes

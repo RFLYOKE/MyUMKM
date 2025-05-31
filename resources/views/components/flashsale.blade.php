@@ -8,17 +8,19 @@
     <!-- Daftar Produk -->
     <div class="grid grid-cols-4 gap-2">
         @foreach ($produkFlashSale as $produk)
-            <div class="border rounded-md shadow p-2 bg-white">
-                {{-- Gambar Utama Produk --}}
-                @php
-                    $gambar = $produk->gambar_utama ?? 'img/default.png';
-                @endphp
-                <img src="{{ asset('storage/' . $gambar) }}" alt="{{ $produk->nama }}" class="w-full h-14 object-contain mb-2" />
+            <a href="{{ route('produk.detail', $produk->id) }}">
+                <div class="border rounded-md shadow p-2 bg-white">
+                    {{-- Gambar Utama Produk --}}
+                    @php
+                        $gambar = $produk->gambar_utama ?? 'img/default.png';
+                    @endphp
+                    <img src="{{ asset('storage/' . $gambar) }}" alt="{{ $produk->nama }}" class="w-full h-14 object-contain mb-2" />
 
-                {{-- Harga --}}
-                <div class="text-sm font-bold">Rp{{ number_format($produk->harga, 0, ',', '.') }}</div>
-                <div class="text-xs line-through text-gray-500">Rp{{ number_format($produk->harga * 1.3, 0, ',', '.') }}</div>
-            </div>
+                    {{-- Harga --}}
+                    <div class="text-sm font-bold">Rp{{ number_format($produk->harga, 0, ',', '.') }}</div>
+                    <div class="text-xs line-through text-gray-500">Rp{{ number_format($produk->harga * 1.3, 0, ',', '.') }}</div>
+                </div>
+            </a>
         @endforeach
     </div>
 </div>

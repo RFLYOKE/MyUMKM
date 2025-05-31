@@ -2,6 +2,11 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProdukController;
+use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -14,7 +19,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
     
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-
+    
     Route::get('/dashboard/search', function () {
         return view('search-page');
     });
@@ -23,32 +28,22 @@ Route::middleware('auth')->group(function () {
         return view('notification');
     });
 
-    Route::get('/transaction', function () {
-        return view('transaction');
-    });
+    Route::get('/transaction', [TransactionController::class, 'index'])->name('transaction');
 
-    Route::get('/cart', function () {
-        return view('cart.cart');
-    });
+    //Keranajang
+    Route::get('/cart', [KeranjangController::class, 'show'])->name('cart.show');
+    Route::post('/cart', [KeranjangController::class, 'create'])->name('cart.create');
+    Route::put('/cart/{keranjang}', [KeranjangController::class, 'update'])->name('cart.update');
+    Route::delete('/cart/{keranjang}', [KeranjangController::class, 'destroy'])->name('cart.destroy');
+    Route::get('/cart/detail-product/{id}', [ProdukController::class, 'show'])->name('produk.detail');
 
-    Route::get('/cart/detail-product', function () {
-        return view('cart.detail-product');
-    });
+    Route::get('/cart/checkout', [CheckoutController::class, 'index'])->name('checkout');
+    Route::post('/cart/checkout', [CheckoutController::class, 'store'])->name('checkout.store');
+    Route::get('/cart/checkout/payment/{id}', [PaymentController::class, 'show'])->name('payment.show');
 
-    Route::get('/cart/checkout', function () {
-        return view('cart.checkout');
-    });
-    Route::get('/cart/checkout/payment', function () {
-        return view('cart.payment.payment');
-    });
-
-    Route::get('/cart/checkout/confirm', function () {
-        return view('cart.payment.confirm-payment');
-    });
-
-    Route::get('/cart/checkout/success', function () {
-        return view('cart.payment.success');
-    });
+    Route::get('/cart/checkout/confirm-payment/{pesanan}', [PaymentController::class, 'confirmForm'])->name('payment.confirm-form');
+    Route::post('/cart/checkout/confirm-payment/{pesanan}', [PaymentController::class, 'processPayment'])->name('payment.process');
+    Route::get('/cart/checkout/success', [PaymentController::class, 'success'])->name('payment.success');
 
     Route::get('/profile', function () {
         return view('profile');

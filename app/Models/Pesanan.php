@@ -42,7 +42,7 @@ class Pesanan extends Model
 
     public function alamatPengiriman()
     {
-        return $this->belongsTo(AlamatPengiriman::class, 'alamat_pengiriman_id');
+        return $this->belongsTo(AlamatPengirim::class, 'alamat_pengiriman_id');
     }
 
     public function pesananItems()

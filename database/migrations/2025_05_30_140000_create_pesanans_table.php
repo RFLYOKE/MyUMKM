@@ -21,7 +21,7 @@ return new class extends Migration
             $table->decimal('biaya_jasa_aplikasi', 10, 2);
             $table->decimal('biaya_layanan', 10, 2);
             $table->decimal('total_biaya', 10, 2);
-            $table->enum('metode_pembayaran', ['gopay', 'ovo', 'shopeepay', 'dana']);
+            $table->enum('metode_pembayaran', ['gopay', 'ovo', 'shopee_pay', 'dana']);
             $table->enum('status_pesanan', ['pending', 'diproses', 'dikirim', 'selesai', 'batal']);
             $table->text('catatan')->nullable();
             $table->timestamps();
